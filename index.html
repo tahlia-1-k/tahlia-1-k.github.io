@@ -1,1 +1,277 @@
-Hello World
+<!DOCTYPE html>
+<!-- To customise, look for the comments marked "Customise here" -->
+<html lang="en">
+<head>
+    <meta name="viewport" content="max-width=1909px, initial-scale=1.0" charset="utf-8">
+    <title>Australian Indigenous Migration</title> <!-- Customise here: Title of the window / frame -->
+    
+    <style>
+        h4{ /* Customise here: style of titles */
+            color: white;
+            text-align: center;
+            font:14px/15px Helvetica;
+        }
+        
+        p{ /* Customise here: style of paragraphs */
+            color: white;
+            text-align: justify;
+            text-indent: 10px;
+            line-height: 1.5;
+            font:12px/13px Helvetica;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://images.squarespace-cdn.com/content/5cb54d4dfae5d50001f495fa/1569895069821-E4GM2B2NV7UM71RO8SCG/png_noScramble.png?format=2500w&content-type=image%2Fpng" onload="scaleImg()" id = "ausMapImg" alt = "ausMapImg" usemap="#ausMap"  style="background-color: lightblue; -webkit-transform-origin: top left; position: absolute; top: 1px; left: 1px; z-index: 0;"> <!-- Cusomise here: SRC website of image -->
+        <map name="ausMap" style="z-index: 2;">
+            <area onclick="loadDoc(this.title)" alt="44kya-SW-WA" title="44kya-SW-WA" href="#" coords="284,1167,23" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="48kya-SW-WA" title="48kya-SW-WA" href="#" coords="251,1293,22" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="47kya-MidN-WA" title="47kya-MidN-WA" href="#" coords="357,935,22" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="40kya-NW-WA" title="40kya-NW-WA" href="#" coords="139,882,20" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="44kya-N-WA" title="44kya-N-WA" href="#" coords="310,840,21" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="51kya-N-WA" title="51kya-N-WA" href="#" coords="173,793,19" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="47kya-W-NT" title="47kya-W-NT" href="#" coords="516,693,20" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="45kya-W-NT" title="45kya-W-NT" href="#" coords="577,639,21" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="46kya-N-NT" title="46kya-N-NT" href="#" coords="789,534,18" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="42kya-QLD" title="42kya-QLD" href="#" coords="1053,752,20" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="40kya-QLD" title="40kya-QLD" href="#" coords="1204,678,21" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="45kya-NSW" title="45kya-NSW" href="#" coords="1183,1157,18" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="46kya-NSW" title="46kya-NSW" href="#" coords="1183,1198,22" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="40kya-TAS" title="40kya-TAS" href="#" coords="1171,1544,19" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="49kya-E-SA" title="49kya-E-SA" href="#" coords="969,1146,21" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="44kya-W-SA" title="44kya-W-SA" href="#" coords="922,1184,20" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="41kya-SA" title="41kya-SA" href="#" coords="567,1179,19" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="46kya-NewGuinea" title="46kya-NewGuinea" href="#" coords="1333,383,21" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="47kya-NewGuinea" title="47kya-NewGuinea" href="#" coords="1293,278,22" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="42kya-NewGuinea" title="42kya-NewGuinea" href="#" coords="1420,274,21" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="43kya-NewGuinea" title="43kya-NewGuinea" href="#" coords="1484,173,19" shape="circle">
+            <area onclick="loadDoc(this.title)" alt="blackArrow" title="blackArrow" href="#" coords="434,138,531,192,430,239,434,196,131,146,1,89,7,43,153,113,333,167,436,173" shape="poly">
+            <area onclick="loadDoc(this.title)" alt="dashedLine" title="dashedLine" href="#" coords="545,186,609,189,668,153,722,156,805,208,871,255,857,283,772,222,708,184,642,224,548,219" shape="poly">
+            <area onclick="loadDoc(this.title)" alt="newGuineaArrow" title="newGuineaArrow" href="#" coords="937,353,941,372,1022,364,1135,336,1173,327,1180,341,1194,272,1135,300,1150,309,1029,340" shape="poly">
+            <area onclick="loadDoc(this.title)" alt="ausArrowWest" title="ausArrowWest" href="#" coords="878,359,883,418,840,434,765,427,699,418,597,451,508,486,463,555,420,635,323,720,236,774,165,864,135,946,149,1043,182,1142,250,1241,316,1293,390,1289,482,1272,505,1258,519,1274,541,1220,493,1230,465,1251,390,1270,325,1260,275,1225,218,1152,173,1055,161,963,212,831,415,675,489,562,569,479,654,463,729,444,840,453,899,444,914,382,911,333" shape="poly">
+            <area onclick="loadDoc(this.title)" alt="ausArrowEast" title="ausArrowEast" href="#" coords="927,386,981,415,1073,441,1127,495,1193,594,1271,750,1283,906,1255,1047,1153,1097,1127,1160,1099,1222,1067,1206,1078,1271,1123,1241,1130,1210,1165,1123,1276,1068,1311,906,1302,790,1342,835,1375,929,1371,1020,1349,1144,1302,1243,1198,1297,1104,1288,1047,1260,950,1160,917,1071,927,1042,882,991,869,1067,897,1093,936,1156,976,1217,1007,1250,1049,1286,1073,1302,974,1290,984,1265,904,1284,972,1323,1007,1314,1097,1323,1177,1314,1208,1311,1180,1362,1151,1444,1172,1507,1203,1451,1197,1385,1237,1300,1293,1281,1352,1205,1380,1125,1409,1016,1399,891,1217,608,1135,459,1069,422,963,380" shape="poly">
+            <area onclick="loadDoc(this.title)" alt="blueArrow" title="blueArrow" href="#" coords="399,708,418,708,425,784,468,869,515,897,513,956,494,1008,515,1060,508,1097,482,1057,432,1105,439,1046,385,1053,418,1015,482,975,484,923,446,873,413,819" shape="poly">
+      </map>
+      
+      <div id="text-block" style="opacity:0.8;border:1px solid #ccc; overflow:auto;  background-color: black; color: white; padding-right: 1%; padding-left: 1%; padding-top: 1%; -webkit-transform-origin: top left; position: absolute; top: 5px;">
+          <!-- Customise here: anything in this section page becomes the welcome message on the map. -->
+        <h4>Aboriginal Migration to Australia</h4>
+          <p>The movements of ancient Aboriginal people can be discerned from their mitochondrial DNA, or mtDNA. This map shows the path that they took over the ancient landmass of Sahul (modern day Australia and New Guinea).</p>
+              
+              <p>Click on any of the arrows or points to learn more!</p>
+        <!-- End customise -->
+    </div>
+      
+    <div class=articles style="display: none;"> <!-- Customise here: these are the contents of the text box for each click-point -->
+        <!-- Black map dots -->
+        <article id="44kya-SW-WA-a">
+            <h4>44kya-SW-WA-a</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="48kya-SW-WA-a">
+            <h4>48kya-SW-WA</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="47kya-MidN-WA-a">
+            <h4>47kya-MidN-WA</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="43kya-NW-WA-a">
+            <h4>43kya-NW-WA</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="40kya-N-WA-a">
+            <h4>40kya-N-WA</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="51kya-N-WA-a">
+            <h4>51kya-N-WA</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="47kya-W-NT-a">
+            <h4>47kya-W-NT</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="45kya-W-NT-a">
+            <h4>45kya-W-NT</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="44kya-E-NT-a">
+            <h4>44kya-E-NT</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="42kya-QLD-a">
+            <h4>42kya-QLD</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="40kya-QLD-a">
+            <h4>40kya-QLD</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="45kya-NSW-a">
+            <h4>45kya-NSW</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="46kya-NSW-a">
+            <h4>46kya-NSW</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="40kya-TAS-a">
+            <h4>40kya-TAS</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="49kya-E-SA-a">
+            <h4>49kya-E-SA</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="44kya-W-SA-a">
+            <h4>44kya-W-SA</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="41kya-SA-a">
+            <h4>41kya-SA</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="46kya-NewGuinea-a">
+            <h4>46kya-NewGuinea</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="47kya-NewGuinea-a">
+            <h4>47kya-NewGuinea</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="42kya-NewGuinea-a">
+            <h4>42kya-NewGuinea</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <article id="43kya-NewGuinea-a">
+            <h4>43kya-NewGuinea</h4>
+            <p>Lorem ipsum...</p>
+        </article>
+        <!-- End black map dots -->
+        <!-- Arrow messages -->
+        <article id="blackArrow-a">
+            <h4>Journey through Sahul</h4>
+            <p>The ancestors of modern Aboriginal and Papuans were amongst a group of anatomically modern humans that left Africa ~50-60 thousand years ago. Their journey to Sahul took them across the Asian continent and through South East Asia, before eventually arriving in the ancient landmass of Sunda.</p>
+        </article>
+        <article id="dashedLine-a">
+            <h4>Crossing Wallacea</h4>
+            <p>Travel between Sunda and Sahul (the ancient continent connecting Australia and New Guinea) required moving across an island archipelago that is now known as Wallacea, part of modern Indonesia. While the route that was taken into Sahul remains unknown, recent research favours a route traversing the northern Wallacean islands </p>
+        </article>
+        <article id="newGuineaArrow-a">
+            <h4>Split off to Papua New Guinea</h4>
+            <p>Shortly after arriving into Sahul (possibly within a few hundred years), the original human migrants to Sahul split into three separate groups. One group, the ancestors of modern Papuans, moved North into Papua New Guinea.</p>
+        </article>
+        <article id="ausArrowWest-a">
+            <h4>Westen Migration</h4>
+            <p>At the same time as the inhabitants of Sahul split off to Papua New Guinea, two distinct groups spread throughout Australia's East and West, who are the ancestors of today's modern Aboriginal Australians. The Western group migrated down the coast of WA.</p>
+        </article>
+        <article id="ausArrowEast-a">
+            <h4>Eastern Migration</h4>
+            <p>At the same time as the inhabitants of Sahul split off to Papua New Guinea, two distinct groups spread throughout Australia's East and West, who are the ancestors of today's modern Aboriginal Australians. The Eastern group's movement along the east coast also appears to have involved parallel movements along the coast and through the interior, perhaps along the Murray-Darling River corridor </p>
+        </article>
+        <article id="blueArrow-a">
+            <h4>Reinhabitation of the Western Central Desert</h4>
+            <p>There are also genetic records of more recent movement from northwestern Australia into the western central desert region around 20-25 thousand years ago. This pattern suggests that this region was re-inhabited following the end of last glacial maximum, a period marked by cold temperatures and increased aridification that likely made longterm survival in these areas challenging.</p>
+        </article>
+        <!-- End arrow messages -->
+    </div>
+    
+      <!-- Do not edit anything below this point -->
+        <script> /* replaces text box contents */
+            function loadDoc(doc) {
+                var articleID = doc + "-a"; /* article ID for each point should be the same as the name of the point you click on + "-a" */
+                document.getElementById("text-block").innerHTML = document.getElementById(articleID).innerHTML;
+            }
+        </script>
+      
+      <script> /* Resize handler */     
+          //var imgHeight = 1678; /* need edit if image is changed */
+          //var imgWidth = 1709;
+          var imgHeight = 1442
+          var imgWidth = 2500;
+          
+          var maxImgScale = 1.0;
+          var minImgScale = 0.1;
+          var viewWidth_c = 0;
+          var textBlock = document.getElementById("text-block");
+          var map = document.getElementById("ausMapImg");
+          var currentHeight = 0;
+          var currentWidth = 0;
+          
+          function setMaxImgScale(viewHeight){ /* calculates max height */
+              maxImgScale = viewHeight / imgHeight;
+          }
+          
+          function imgSizeFor(viewWidth, viewHeight){ /* calculates img scale */
+              scale = viewWidth / imgWidth - 0.1;
+              setMaxImgScale(viewHeight);
+              
+              if(scale > maxImgScale){ //view too wide
+                  scale = maxImgScale;
+              } else if (scale < minImgScale){
+                  scale = minImgScale;
+              }
+              
+              currentWidth = imgWidth * scale;
+              currentHeight = imgHeight * scale;
+              return scale;
+          }
+          
+          function getViewport() { /* script to get viewport size for scale */
+             var viewPortWidth;
+             var viewPortHeight;
+
+             // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
+             if (typeof window.innerWidth != 'undefined') {
+               viewPortWidth = window.innerWidth;
+               viewPortHeight = window.innerHeight;
+             }
+            // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
+             else if (typeof document.documentElement != 'undefined'
+             && typeof document.documentElement.clientWidth !=
+             'undefined' && document.documentElement.clientWidth != 0) {
+                viewPortWidth = document.documentElement.clientWidth;
+                viewPortHeight = document.documentElement.clientHeight;
+             }
+             // older versions of IE
+             else {
+               viewPortWidth = document.getElementsByTagName('body')[0].clientWidth;
+               viewPortHeight = document.getElementsByTagName('body')[0].clientHeight;
+             }
+              viewWidth_c = viewPortWidth;
+            return [viewPortWidth, viewPortHeight];
+        }
+          
+          function scaleTextbox(scale){ /* Scales textbox */
+              textBlock.style.height = (imgHeight * scale - 20) + "px";
+              textBlock.style.left = (imgWidth * scale *0.55) + "px";
+              textBlock.style.width = viewWidth_c - 30 - (imgWidth * scale * 0.55) + "px";
+              //textBlock.style.width = (imgWidth * scale) - textBlock.style.left;
+            
+              if(scale < 0.20){
+                  textBlock.style.font = "10px/11px Helvetica";
+              }
+              else if (scale < 0.25) {
+                  textBlock.style.font = "12px/13px Helvetica";
+              }
+              else if (scale < 0.3){
+                  textBlock.style.font = "13px/14px Helvetica";
+              }
+              else if (scale < 0.4){
+                  textBlock.style.font = "14px/15px Helvetica";
+              }
+              
+              return;
+        }
+          
+        function scaleImg(){ /* scales image - calls scale textbox too */
+            var viewport = getViewport();
+            var scale = imgSizeFor(viewport[0], viewport[1]);
+            map.style.webkitTransform = "scale(" + scale + ")";
+            scaleTextbox(scale);
+        }
+          
+        window.onresize = scaleImg; /* assigns ScaleImg as resize handler */
+      </script> <!-- End resize handler -->
+</body>
