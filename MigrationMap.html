@@ -2,7 +2,7 @@
 <!-- To customise, look for the comments marked "Customise here" -->
 <html lang="en">
 <head>
-    <meta name="viewport" content="max-width=2500px, initial-scale=1.0" charset="utf-8">
+    <meta name="viewport" content="max-width=1909px, initial-scale=1.0" charset="utf-8">
     <title>Australian Indigenous Migration</title> <!-- Customise here: Title of the window / frame -->
     
     <style>
@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-    <img src="https://images.squarespace-cdn.com/content/5cb54d4dfae5d50001f495fa/1569895069821-E4GM2B2NV7UM71RO8SCG/png_noScramble.png?format=2500w&content-type=image%2Fpng" onload="scaleImg()" id = "ausMapImg" alt = "ausMapImg" usemap="#ausMap"  style="background-color: lightblue; -webkit-transform-origin: top left; position: absolute; top: 1px; left: 1px; z-index: 0;"> <!-- Cusomise here: SRC website of image -->
+    <img src="png_noScramble.png" onload="scaleImg()" id = "ausMapImg" alt = "ausMapImg" usemap="#ausMap"  style="background-color: lightblue; -webkit-transform-origin: top left; position: absolute; top: 1px; left: 1px; z-index: 0;"> <!-- Cusomise here: SRC website of image -->
         <map name="ausMap" style="z-index: 2;">
             <area onclick="loadDoc(this.title)" alt="44kya-SW-WA" title="44kya-SW-WA" href="#" coords="284,1167,23" shape="circle">
             <area onclick="loadDoc(this.title)" alt="48kya-SW-WA" title="48kya-SW-WA" href="#" coords="251,1293,22" shape="circle">
@@ -186,18 +186,13 @@
         </script>
       
       <script> /* Resize handler */     
-          //var imgHeight = 1678; /* need edit if image is changed */
-          //var imgWidth = 1709;
-          var imgHeight = 1442
-          var imgWidth = 2500;
-          
+          var imgHeight = 1678; /* need edit if image is changed */
+          var imgWidth = 1909;
           var maxImgScale = 1.0;
           var minImgScale = 0.1;
           var viewWidth_c = 0;
           var textBlock = document.getElementById("text-block");
           var map = document.getElementById("ausMapImg");
-          var currentHeight = 0;
-          var currentWidth = 0;
           
           function setMaxImgScale(viewHeight){ /* calculates max height */
               maxImgScale = viewHeight / imgHeight;
@@ -212,9 +207,6 @@
               } else if (scale < minImgScale){
                   scale = minImgScale;
               }
-              
-              currentWidth = imgWidth * scale;
-              currentHeight = imgHeight * scale;
               return scale;
           }
           
@@ -245,9 +237,12 @@
           
           function scaleTextbox(scale){ /* Scales textbox */
               textBlock.style.height = (imgHeight * scale - 20) + "px";
-              textBlock.style.left = (imgWidth * scale *0.55) + "px";
-              textBlock.style.width = viewWidth_c - 30 - (imgWidth * scale * 0.55) + "px";
-              //textBlock.style.width = (imgWidth * scale) - textBlock.style.left;
+              textBlock.style.left = (imgWidth * scale *0.80) + "px";
+              textBlock.style.width = viewWidth_c - 30 - (imgWidth * scale * 0.8) + "px";
+              
+              if((imgWidth * scale * 0.33) < textBlock.style.width) {
+                  textBlock.style.width = (imgWidth * scale * 0.33);
+              }
             
               if(scale < 0.20){
                   textBlock.style.font = "10px/11px Helvetica";
